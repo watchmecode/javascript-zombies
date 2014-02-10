@@ -2,10 +2,13 @@ extends layout
 
 block content
   .jumbotron
-    .container.center
-      h1 JavaScript Zombies
-      img(src="/images/JavaScript-Zombies.png", width="300")
-      h2 
-        | Memory Leaks, Garbage Collection 
-        br
-        | and dealing with the Undead
+    .container
+      .row
+        .col-sm-3.col-sm-offset-1
+          img.img-responsive(src="/images/JavaScript-Zombies.png", width="300")
+        .col-sm-7
+          h1 JavaScript Zombies
+          h2 
+            | Memory Leaks, Garbage Collection 
+            br
+            | and dealing with the Undead
