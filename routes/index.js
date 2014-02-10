@@ -4,5 +4,7 @@ exports.index = function(req, res){
 
 exports.viewDemo = function(req, res){
   var pageName = req.params.pageName;
-  res.render("demos/" + pageName);
+  res.render("demos/" + pageName, {
+    pageName: pageName
+  });
 };

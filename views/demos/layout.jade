@@ -1,0 +1,10 @@
+extends ../layout
+
+block javascript
+
+  script.
+    $(function(){
+      $(".menu.#{pageName}").addClass("active");
+    });
+
+  block demo
