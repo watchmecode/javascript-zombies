@@ -17,7 +17,7 @@ html
     block javascript
 
   body
-    .navbar.navbar-inverse(role='navigation')
+    header.navbar.navbar-inverse(role='navigation')
       .container
         .navbar-header
           button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
@@ -29,7 +29,7 @@ html
             img(src='/images/JavaScript-Zombies.png', width='75')
           a.navbar-brand(href='/')
             | JavaScript Zombies
-        .navbar-collapse.collapse
+        navigation.navbar-collapse.collapse
           ul.nav.navbar-nav
             li
               a(href='') Link
@@ -65,3 +65,12 @@ html
     .content
       block content
 
+    footer.navbar.navbar-inverse(role='footer')
+      .container
+        ul.nav.navbar-nav
+          li.active
+            a(href='http://watchmecode.net', target="_blank") WatchMeCode: JavaScript Screencasts
+
+        ul.nav.navbar-nav.navbar-right
+          li
+            a(href='http://mutedsolutions.com') Copyright &copy;2014 Muted Solutions, LLC. All Rights Reserved.
