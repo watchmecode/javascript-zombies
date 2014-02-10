@@ -1,6 +1,11 @@
 extends layout
 
 block demo
+  script(src="/assets/global-vars/global-vars.js")
+  script.
+    $(function(){
+      MemoryEater.start();
+    });
 
 block content
   .container
@@ -8,4 +13,42 @@ block content
       .col-sm-12
         h1 Global Variables
 
+        p 
+          | Global variables are the original "memory leak". They
+          | are variables that are available anywhere in any
+          | JavaScript code that is currently running in a given
+          | browser tab. Worse yet, they are hard to get rid of.
+          | A global variable never falls out of scope, it can
+          | only be "deleted" or assigned to a new value. But that
+          | only works when you remember to do it. Globals are
+          | bad in most cases. Avoid them unless you really have
+          | a good reason to use them (like a top level application
+          | object or namespace).
 
+    .row
+      .col-sm-4.col-sm-offset-4
+        h1 The Memory Eater
+
+        p Click this button, and watch your browser eat memory!
+
+        button.btn.btn-danger#eat-more EAT MOAR MEMORYZ!!!!
+
+        p &nbsp;
+    .row
+
+      .col-sm-4.col-sm-offset-1
+        h1 Cleaner 1: re-assign
+        p 
+          | This button uses assigns the variable
+          | to a new value to clean up memory
+        button.btn.btn-success#reassign Clean Plate Club Members' Entrance
+
+      .col-sm-4.col-sm-offset-1
+        h1 
+          | Cleaner 2: 
+          code delete
+        p 
+          | This button uses
+          code delete
+          | to clean up memory
+        button.btn.btn-success#delete Clean Plate Club Members' Entrance
