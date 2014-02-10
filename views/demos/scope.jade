@@ -1,6 +1,11 @@
 extends ../layout
 
 block javascript
+  script(src="/assets/scope/scope.js")
+  script.
+    $(function(){
+      MemoryEater.start();
+    });
 
 block content
   .container
@@ -8,4 +13,33 @@ block content
       .col-sm-12
         h1 Scope And Garbage Collection
 
+        p
+          | JavaScript is a garbage collected language. You don't
+          | explicitly allocate and de-allocate memory. Instead,
+          | you just assign objects and values to variables and
+          | object attributes. This allocates the needed amount
+          | of memory for the thing being assigned. When you're
+          | done with that thing, you don't need to de-allocate
+          | the memory. You only need to de-reference the 
+          | variable or object attribute, and the garbage
+          | collector will eventually clean it up.
+
+    .row
+      .col-sm-6
+        h1 The Memory Eater
+
+        p &nbsp;
+        p Click this button, and watch your browser memory go up!
+        p &nbsp;
+
+        button.btn.btn-danger#eat-more EAT MOAR MEMORYZ!!!!
+
+      .col-sm-6
+        h1 The Memory Cleaner
+
+        p &nbsp;
+        p Click this button, and watch your browser memory go back down!
+        p &nbsp;
+
+        button.btn.btn-success#eat-less Clean Plate Club Members' Entrance
 
