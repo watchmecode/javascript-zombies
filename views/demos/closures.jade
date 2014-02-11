@@ -1,12 +1,33 @@
 extends layout
 
-block demo
-
 block content
   .container
     .row
       .col-sm-12
         h1 Closures
+        p
+          | Closures are a way of providing a variable to a 
+          | function, without having to pass that variable as
+          | a parameter. They can be considered a form of 
+          | "controlled memory leak". They allow access to a 
+          | non-global variable they did not declare, and one
+          | that normally would have fallen out of scope. 
+          | Variables that are declared in one function and
+          | accessible in another function (typically a child
+          | function) without being passed in as a parameter
+          | are said to be in a closure.
 
+    .row
+      .col-sm-6
+        h1 The Memory Eater
 
+        p Click this button, and watch your browser memory go up!
 
+        button.btn.btn-danger#eat-more EAT MOAR MEMORYZ!!!!
+
+      .col-sm-6
+        h1 The Memory Cleaner
+
+        p Click this button, and watch your browser memory go back down!
+
+        button.btn.btn-success#eat-less Clean Plate Club Members' Entrance
