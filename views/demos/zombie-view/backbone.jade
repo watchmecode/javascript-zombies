@@ -1,9 +1,46 @@
 extends ../layout
 
+block javascript
+  script(src="/assets/zombie-view/registry.js")
+  script(src="/assets/zombie-view/events.js")
+  script(src="/assets/zombie-view/zombie-view.js")
+  script.
+    $(function(){
+      Zombies.riseFromTheGrave();
+    });
+
 block content
   .container
     .row
       .col-sm-2
         img.img-responsive(src="/images/JavaScript-Zombies.png")
       .col-sm-10
-        h1 Zombie View In Backbone.js
+        h1 Zombie Backbone.js
+
+        p
+          | "Zombies" are common in Backbone.js apps, with the extensive
+          | use of Events. Fortunately, Backbone provides a simple way of
+          | fixing this problem through the use of it's
+          code listenTo
+          |  and 
+          code stopListening
+          |  methods. These methods invert the relationship between the
+          | object that triggers the evnets, and the object that handles
+          | the events. Inverting this relationship allows the event handler
+          | references to be cleaned up in a more natural manner.
+
+    .row
+      .col-sm-4.col-sm-offset-2
+        h1 Call The Zombie
+
+        p Click this button, and raise the dead!
+
+        button.btn.btn-success#eat-brains BRAAAAAIINNNSSS!!!
+
+      .col-sm-4.col-sm-offset-1
+        h1 Zombie Instantiator
+
+        p Build your zombie army!
+
+        button.btn.btn-danger#raise-dead Raise The Dead!!
+
