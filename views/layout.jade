@@ -38,8 +38,15 @@ html
               a(href='/demo/global-var') 3. Global Vars
             li.menu.closures
               a(href='/demo/closures') 4. Closures
-            li.menu.zombie-view
-              a(href='/demo/zombie-view') 5. Zombie View
+            li.menu.zombie-view.dropdown
+              a.dropdown-toggle(href='/demo/zombie-view', data-toggle='dropdown')
+                | Zombies 
+                b.caret
+              ul.dropdown-menu
+                li
+                  a(href='/demo/zombie-view') Events
+                li
+                  a(href='/demo/zombie-view/backbone') Backbone View
 
     .content
       block content
