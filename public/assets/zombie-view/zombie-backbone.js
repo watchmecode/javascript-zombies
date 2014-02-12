@@ -1,32 +1,39 @@
 var Zombies = (function(){
 
-  // Zombie Object
-  // -------------
- 
-  var events = new Events();
+  // Zombie Model
+  // ------------
 
-  function Zombie(){
-    this.counter = 0;
+  var Zombie = Backbone.Model.extend({
+  });
 
-    var eatBrainsHandler = this.eatBrains.bind(this);
-    events.on("brains:found", eatBrainsHandler);
-  }
+  // Zombie View
+  // -----------
 
-  Zombie.prototype.eatBrains = function(){
-    this.counter += 1;
-    console.log("eating brains, count", this.counter);
-  };
+  var ZombieView = Backbone.View.extend({
+    initialize: function(){
+      this.model.on("brains:found", this.eatBrains, this);
+      this.counter = 0;
+    },
+
+    eatBrains: function(){
+      this.counter += 1;
+      console.log("eating brains, count", this.counter);
+    }
+  });
 
   // Setup Stuff
   // -----------
 
-  var zombieInstance = new Zombie();
+  var zombie = new Zombie();
+  var zombieView = new ZombieView({
+    model: zombie
+  });
 
   function eatBrains(){
     $("#eat-brains").click(function(e){
       e.preventDefault();
 
-      events.trigger("brains:found");
+      zombie.trigger("brains:found");
       console.log("---");
     });
   }
@@ -35,7 +42,10 @@ var Zombies = (function(){
     $("#raise-dead").click(function(e){
       console.log("Raising the dead");
       e.preventDefault();
-      zombieInstance = new Zombie();
+
+      zombieView = new ZombieView({
+        model: zombie
+      });
     });
   }
 
