@@ -1,5 +1,14 @@
 extends layout
 
+block javascript
+  script(src="/assets/zombie-view/registry.js")
+  script(src="/assets/zombie-view/events.js")
+  script(src="/assets/zombie-view/zombie-view.js")
+  script.
+    $(function(){
+      Zombies.riseFromTheGrave();
+    });
+
 block content
   .container
     .row
@@ -15,3 +24,19 @@ block content
           | the grave, out in to your code when you least expect it.
           | The most common cause of zombie objects is event handlers,
           | facilitated by function scope being bound to specific objects.
+
+    .row
+      .col-sm-4.col-sm-offset-2
+        h1 Call The Zombie
+
+        p Click this button, and raise the dead!
+
+        button.btn.btn-success#eat-brains BRAAAAAIINNNSSS!!!
+
+      .col-sm-4.col-sm-offset-1
+        h1 Zombie Instantiator
+
+        p Build your zombie army!
+
+        button.btn.btn-danger#raise-dead Raise The Dead!!
+
