@@ -3,29 +3,29 @@ extends layout
 block content
   .container
     .row
-      .col-sm-12
+      .col-sm-2
+        img.img-responsive(src="/images/JavaScript-Zombies.png")
+      .col-sm-10
         h1 Scope And Garbage Collection
 
         p
-          | JavaScript is a garbage collected language. You don't
-          | explicitly allocate and de-allocate memory. Instead,
-          | you just assign objects and values to variables and
-          | object attributes. This allocates the needed amount
-          | of memory for the thing being assigned. When you're
-          | done with that thing, you don't need to de-allocate
-          | the memory. You only need to de-reference the 
-          | variable or object attribute, and the garbage
-          | collector will eventually clean it up.
+          | When you're done with an object or variable, and you
+          | don't need it hanging around anymore, you only need to 
+          | de-reference it. The garbage collector will eventually 
+          | clean it up for you, when there are no more referneces.
+          | Controlling the scope of variables is an important
+          | factor of allowing memory to be cleaned up as quickly
+          | as possible.
 
     .row
-      .col-sm-6
+      .col-sm-4.col-sm-offset-2
         h1 The Memory Eater
 
-        p Click this button, and watch your browser memory go up!
+        p Click this button and watch your browser memory skyrocket!
 
         button.btn.btn-danger#eat-more EAT MOAR MEMORYZ!!!!
 
-      .col-sm-6
+      .col-sm-4.col-sm-offset-1
         h1 The Memory Cleaner
 
         p Click this button, and watch your browser memory go back down!

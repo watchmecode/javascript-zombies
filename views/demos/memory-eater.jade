@@ -3,14 +3,30 @@ extends layout
 block content
   .container
     .row
-      .col-sm-6
+      .col-sm-2
+        img.img-responsive(src="/images/JavaScript-Zombies.png")
+      .col-sm-10
+        h1 JavaScript Memory
+        p
+          | JavaScript is a garbage collected language. You don't
+          | explicitly allocate and de-allocate memory. Instead,
+          | you just assign objects and values to variables and
+          | object attributes. This allocates the needed amount
+          | of memory for the thing being assigned. When the thing
+          | is no longer referenced by any code, it can be 
+          | cleaned up. But garbage collection does not mean you
+          | are off the hook for memory management. It is easy to
+          | eat an entire machine worth of memory if you're not
+          | paying attention.
+    .row
+      .col-sm-4.col-sm-offset-2
         h1 The Memory Eater
 
         p Click this button, and watch your browser memory go up!
 
         button.btn.btn-danger#eat-more EAT MOAR MEMORYZ!!!!
 
-      .col-sm-6
+      .col-sm-4.col-sm-offset-1
         h1 The Memory Cleaner
 
         p Click this button, and watch your browser memory go back down!

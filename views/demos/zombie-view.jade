@@ -3,5 +3,15 @@ extends layout
 block content
   .container
     .row
-      .col-sm-12
+      .col-sm-2
+        img.img-responsive(src="/images/JavaScript-Zombies.png")
+      .col-sm-10
         h1 Zombie Event Handlers
+
+        p
+          | "Zombies" are objects that you thought were dead - long
+          | processed by the JavaScript garbage collector - but manage
+          | to push their ugly, deformed and contageous selves through
+          | the grave, out in to your code when you least expect it.
+          | The most common cause of zombie objects is event handlers,
+          | facilitated by function scope being bound to specific objects.

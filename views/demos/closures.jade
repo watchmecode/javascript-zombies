@@ -3,7 +3,9 @@ extends layout
 block content
   .container
     .row
-      .col-sm-12
+      .col-sm-2
+        img.img-responsive(src="/images/JavaScript-Zombies.png")
+      .col-sm-10
         h1 Closures
         p
           | Closures are a way of providing a variable to a 
@@ -18,14 +20,14 @@ block content
           | are said to be in a closure.
 
     .row
-      .col-sm-6
+      .col-sm-4.col-sm-offset-2
         h1 The Memory Eater
 
-        p Click this button, and watch your browser memory go up!
+        p Click this button, and watch your browser memory skyrocket!
 
         button.btn.btn-danger#eat-more EAT MOAR MEMORYZ!!!!
 
-      .col-sm-6
+      .col-sm-4.col-sm-offset-1
         h1 The Memory Cleaner
 
         p Click this button, and watch your browser memory go back down!
